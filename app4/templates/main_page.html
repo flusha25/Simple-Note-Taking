@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>My Application</title>
+</head>
+<body>
+
+    <h1>Our Notes</h1>
+
+    <h2>Notes</h2>
+    <ul>
+        {% for note in notes %}
+            <li>
+                TITLE: <a href="{% url 'note_details' note.id %}">  {{ note.title }} </a><br>
+                DATE CREATED: {{ note.date_created }}<br>
+                <a href="{% url 'delete_note' note.id %}">Delete Note</a><br><br>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'add_note' %}">Add New Note</a>
+
+</body>
+</html>

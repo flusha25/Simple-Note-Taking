@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> note details </title>
+</head>
+<body>
+
+    <header>
+        <h1>{{ note.title }}</h1>
+    </header>
+    <li>
+        CONTENT: {{ note.content }}<br>
+        DATE CREATED: {{ note.date_created }}<br>
+        <a href="{% url 'delete_note' note.id %}">Delete Note</a><br>
+        <a href="{% url 'edit_note' note.id %}">Edit Note</a><br>
+        <a href="{% url 'main_page' %}"> Go to Main Page</a>
+
+    </li>
+
+</body>
+</html>
